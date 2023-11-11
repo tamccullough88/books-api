@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "dom": "^0.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-react-views": "^0.11.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "nodemonConfig": {
+    "ext": "jsx,js,json,html"
+  }
+}
+
