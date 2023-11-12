@@ -1,4 +1,9 @@
-const bookSchema = new Schema({
+//require mongoose
+const mongoose = require('mongoose')
+
+const { Schema } = mongoose
+
+const booksSchema = new Schema({
     title: { type: String, required: true },
     image: { type: String, default: "http://placekitten.com/350/350" },
     description: { type: String, required: true },
@@ -10,6 +15,9 @@ const bookSchema = new Schema({
     quantity: { type: Number }
 })
 
-bookSchema.methods.showWritten = function () {
-    return `${this.name} was written ${this.year}. There are currently ${this.quantity} left in stock`
+booksSchema.methods.showWritten = function () {
+    return `${this.title} was written ${this.year}. There are currently ${this.quantity} left in stock`
 }
+
+
+module.exports = mongoose.model('Books', booksSchema)

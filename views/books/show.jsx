@@ -4,17 +4,18 @@ const Def = require('../default')
 function Show(data) {
 
     return (
-        <Def title={data.place.name}>
+        <Def title={data.Books.title}>
             <main>
                 <div >
                     <div className="row">
                         <div className="col-sm-6">
-                            <img className="col-sm-10 img-fluid" src={data.place.pic} alt={data.place.name} />
-                            <p className="text-center">Located in: {data.place.city}, {data.place.state}</p>
+                            <img className="col-sm-10 img-fluid" src={data.Books.image} alt={data.Books.title} />
+                            <p className="text-center">{data.Books.showWritten()}</p>
                         </div>
                         <div className="col-sm-5">
-                            <h1> {data.place.name} </h1>
+                            <h1> {data.Books.title} </h1>
                             <h2 className="text-center">Description</h2>
+                            <p>{data.Books.description}</p>
                         </div>
                     </div>
                 </div>
@@ -24,3 +25,5 @@ function Show(data) {
     )
 
 }
+
+module.exports = Show
