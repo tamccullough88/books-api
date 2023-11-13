@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
     res.render('home')
 })
 
+//cors added
 app.get('/books/:id', function (req, res, next) {
     res.json({ msg: 'This is CORS-enabled for all origins!' })
 })

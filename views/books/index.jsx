@@ -3,7 +3,6 @@ const Def = require('../default')
 
 function Index(data) {
     let booksFormatted = data.Books.map((book) => {
-
         return (
             <div className="row border" key={book.id}>
                 <div className="col-sm-5" >
