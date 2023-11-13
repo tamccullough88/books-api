@@ -18,6 +18,14 @@ function Show(data) {
                             <p>{data.Books.description}</p>
                         </div>
                     </div>
+                    <a href={`/books/${data.Books.id}/edit`} className="btn btn-warning col-sm-3">
+                        Edit
+                    </a>
+                    <br />
+                    <br />
+                    <form action={`/books/${data.Books.id}?_method=DELETE`} method="POST">
+                        <input type="submit" value="DELETE" className="btn btn-danger col-sm-3" />
+                    </form>
                 </div>
             </main>
 

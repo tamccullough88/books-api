@@ -5,6 +5,7 @@ const PORT = process.env.PORT
 const app = express()
 const mongoose = require('mongoose')
 const MONGO_URI = process.env.MONGO_URI
+const methodOverride = require('method-override')
 
 
 
@@ -14,7 +15,7 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
-// app.use(methodOverride('_method'))
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
 
 

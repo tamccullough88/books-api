@@ -5,7 +5,7 @@ function Index(data) {
     let booksFormatted = data.Books.map((book) => {
 
         return (
-            <div className="col-sm-6" key={book.id}>
+            <div className="col-sm-3 card" key={book.id}>
                 <h2 >
                     <a href={`/books/${book.id}`}>
                         {book.title}
