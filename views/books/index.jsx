@@ -5,16 +5,24 @@ function Index(data) {
     let booksFormatted = data.Books.map((book) => {
 
         return (
-            <div className="col-sm-3 card" key={book.id}>
-                <h2 >
-                    <a href={`/books/${book.id}`}>
-                        {book.title}
-                    </a>
-                </h2>
-                <img src={book.image} alt={book.title} className="img-fluid" />
-                <p className="text-cener">
-                    {book.quantity} Books Left
-                </p>
+            <div className="row border" key={book.id}>
+                <div className="col-sm-5" >
+
+                    <img src={book.image} alt={book.title} className="img-fluid" />
+                </div>
+                <div className="col-sm-5 " >
+                    <h2 >
+                        <a href={`/books/${book.id}`}>
+                            {book.title}
+                        </a>
+                    </h2>
+                    <p className="text-cener">
+                        {book.description}
+                    </p>
+                    <p className="text-cener">
+                        {book.quantity} Books Left
+                    </p>
+                </div>
             </div>
         )
     })
