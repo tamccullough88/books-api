@@ -28,7 +28,7 @@ function Index(data) {
     return (
         <Def>
             <main>
-                <h1>Restaurants to Rant or Rave About!</h1>
+                <h1>Books!</h1>
                 <div className="row">
                     {booksFormatted}
                 </div>

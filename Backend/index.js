@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const MONGO_URI = process.env.MONGO_URI
 const methodOverride = require('method-override')
 var cors = require('cors')
+const bodyParser = require('body-parser')
 
 
 //middleware
@@ -17,7 +18,12 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
-app.use(cors())
+app.use(bodyParser.json())
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}))
 
 //pull paths from books_controllers.js
 app.use('/books', require('./controllers/books_controller.js'))
@@ -42,7 +48,7 @@ app.get('*', (req, res) => {
 // app.listen(process.env.PORT)
 
 app.listen(80, function () {
-    console.log('CORS-enabled web server listening on port 80')
+    console.log('CORS-enabled web server listening on port 3000')
 })
 
 const start = async () => {
